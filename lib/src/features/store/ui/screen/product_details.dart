@@ -42,14 +42,14 @@ class ProductDetails extends StatelessWidget{
           ],
         ),
 
-        body: 
+        body:
         ListView(
           children: <Widget>[
             Image.network(product.imageUrl,height: 200,),
             Column(
               children: <Widget>[
-                Text(product.name,style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),),
-                Text("Lorem"),
+                Text(product.name + '\n',style: TextStyle(fontSize: 30,fontWeight: FontWeight.bold),),
+                Text(product.description + '\n', textAlign: TextAlign.center,style: TextStyle(fontSize: 25,color: Colors.grey,), ),
               ]
             ),
             
@@ -59,9 +59,10 @@ class ProductDetails extends StatelessWidget{
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
-                    Text(product.discountPrice!=null ? "${formatPrice(product.discountPrice)}":""),
+                    Text(product.discountPrice!=null ? "${formatPrice(product.discountPrice)}":"",style: TextStyle(fontSize: 25,)),
                     Text("${formatPrice(product.price)}",
                     style: TextStyle(
+                      fontSize: 25,
                       color: 
                         product.discountPrice!=null? Colors.grey[400] :Colors.green[300], 
                         decoration: product.discountPrice!=null? TextDecoration.lineThrough  :TextDecoration.none,
@@ -71,9 +72,14 @@ class ProductDetails extends StatelessWidget{
                   ),
               ],
             ),
-            Column(
+            Container(
+              margin: new EdgeInsets.only(bottom:20.0,top:20.0),
+              child: Column(
               children: <Widget>[
-                RaisedButton(
+                MaterialButton(
+                  minWidth: 150.0,
+                  height: 50.0,
+                  
                   shape: RoundedRectangleBorder(
                     borderRadius: new BorderRadius.circular(8.0),
                     ),
@@ -83,9 +89,10 @@ class ProductDetails extends StatelessWidget{
                     context,
                     MaterialPageRoute(builder: (context) => ConfirmProductPurchase(product)),)
                   },
-                  child: Text("Pedir",style: TextStyle(color: Colors.white)),
+                  child: Text("Pedir",style: TextStyle(color: Colors.white,fontSize: 25,)),
                   ),
               ],
+              ),
             ),
           ],
         ),

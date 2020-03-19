@@ -19,15 +19,14 @@ class ProductWidget extends StatelessWidget{
   Widget build(BuildContext context){
     return Column(
       children: <Widget>[
-        GestureDetector(child: Image.network(product.imageUrl,height: 200,),
-        
-        onTap: (){
-
-          Navigator.push(
+        GestureDetector(
+          child: Image.network(product.imageUrl,height: 200,),
+          onTap: (){
+            Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context) => ProductDetails(product)),);
-        },
-        ),
+            },
+          ),
         Row(
           mainAxisSize: MainAxisSize.min,
           children: <Widget>[
