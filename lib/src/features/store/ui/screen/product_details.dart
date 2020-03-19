@@ -16,8 +16,7 @@ class ProductDetails extends StatelessWidget{
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
+    return Scaffold(
         appBar: AppBar(
           leading:Builder(
             builder: (BuildContext context){
@@ -32,7 +31,7 @@ class ProductDetails extends StatelessWidget{
           backgroundColor: Colors.white,
           actions: <Widget>[
             IconButton(
-              icon: Icon(Icons.favorite,color: Colors.black),
+              icon: Icon(Icons.favorite_border,color: Colors.black),
               onPressed: () {},
             ),
             IconButton(
@@ -96,7 +95,6 @@ class ProductDetails extends StatelessWidget{
             ),
           ],
         ),
-      ),
-    );
+      );
   }
 }

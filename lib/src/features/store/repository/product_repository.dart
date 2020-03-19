@@ -25,6 +25,7 @@ List<Product> PRODUCTS=[
     name:"Computador Acer", 
     imageUrl:"https://http2.mlstatic.com/computadora-portatil-acer-aspire-e-15-fhd-1tb-hdd-core-i3-D_NQ_NP_647935-MCO31624407619_072019-Q.jpg",
     price: 2500000,
+    discountPrice: 2300000,
     brand: BRANDS[0],
     description: "El Acer Aspire 3 es uno de esos equipos para usuarios que necesitan un portátil sencillo para tareas básicas. Este modelo destaca por su versatilidad, permitiéndonos elegir entre varias configuraciones diferentes. Por un lado, podemos disponer de un procesador hasta Intel Core i5 o AMD A6 o A9, acompañados por hasta 8 ó 12 GB de memoria RAM. Igualmente, el almacenamiento disponible puede ser hasta 256 GB en formato SSD o hasta 1 TB HDD. Las opciones son muy variadas.",
     category: CATEGORIES[0],

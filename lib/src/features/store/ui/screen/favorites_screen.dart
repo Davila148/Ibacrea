@@ -1,21 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:hola/src/features/store/repository/product_repository.dart';
-import 'package:hola/src/features/store/ui/screen/favorites_screen.dart';
-import 'package:hola/src/features/store/ui/widgets/products_by_category_widget.dart';
 
-class ProductsScreen extends StatelessWidget{
+class FavoritesScreen extends StatelessWidget{
 
-  List<ProductsByCategoryWidget> loadCategories(){
-    List<ProductsByCategoryWidget> categoryWidgets = List();
-    CATEGORIES.forEach((category) => categoryWidgets.add(ProductsByCategoryWidget(category)));
-    return categoryWidgets;
-  }
-
-  @override 
-  Widget build(BuildContext context){
-    return MaterialApp(
-      home: Scaffold(
-        drawer: Drawer(
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      drawer: Drawer(
           child: ListView(
               padding: EdgeInsets.zero,
               children: <Widget>[
@@ -38,7 +28,7 @@ class ProductsScreen extends StatelessWidget{
               ],
             ),
           ),
-        appBar: AppBar(
+          appBar: AppBar(
           actions: [
             IconButton(
               icon: Icon(Icons.search),
@@ -49,10 +39,8 @@ class ProductsScreen extends StatelessWidget{
           title: Text('IBACREA'),
         ),
 
-        body: SingleChildScrollView(
-          child: Column(
-          children: loadCategories(),
-          ),
+        body: ListView(
+          
         ),
 
         bottomNavigationBar: BottomNavigationBar(
@@ -78,8 +66,6 @@ class ProductsScreen extends StatelessWidget{
             ),
             ]
           ),
-      ),
     );
   }
-
 }
